@@ -82,7 +82,7 @@ export class AppComponent {
     this.getHeroes();
   }
   getHeroes() {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }
   onSelect(hero: Hero) { this.selectedHero = hero; }
 }
